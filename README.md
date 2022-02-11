@@ -40,9 +40,7 @@ a) The financial reporting taxonomy used by the SEC, i.e. the financial data fie
 
 b) The SEC provides latitude to companies as to which financial data fields they choose to file. I assume a company could choose, for instance, to report and file net income as the SEC-provided fields NetIncomeLossAttributableToParentDiluted or as NetIncomeLossAvailableToCommonStockholdersDiluted or as a number of other SEC-provided similar data fields - each with slightly different definitions.
 
-This makes historical data collection from the SEC challenging. For instance, if one attempts to collect a history of net income for the company with ticker WEC, one finds that from 2010 to 2013 the company filed this as an SEC item labelled "NetIncomeLoss". From 2013 onwards, this item disappeared and was replaced by an item called "NetIncomeLossAvailableToCommonStockholder".
-
-To overcome this, I used yet another net income-related measure called "ComprehensiveIncomeNetOfTax". While this does provide a more continuous history in the example of WEC and several other companies, it doesn't work in all cases. Where it fails, the program prints out a warning message.
+This makes historical data collection from the SEC challenging. For instance, if one attempts to collect a history of net income for the company with ticker WEC, one finds that from 2010 to 2015 the company filed this as an SEC item labelled "NetIncomeLoss". From 2016 onwards, this item disappeared. However it did file a related item called  "ComprehensiveIncomeNetOfTax" consistently from 2010 onwards. For this reason, the program uses "ComprehensiveIncomeNetOfTax" as its net income-related measure. While this does provide a more continuous history in the example of WEC and several other companies, it doesn't work in all cases. Where it fails, the program prints out a warning message.
 
 **Important Disclaimer:**
 
