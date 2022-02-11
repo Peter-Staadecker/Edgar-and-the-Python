@@ -2,7 +2,7 @@
 
 **Abstract:**
 
-This is a Python program that extracts selected corporate financial statement information from the SEC's (US Securities Commission) Edgar filings, as well as from other sources. It uses the data to calculate the net present value and internal rate of return for someone purchasing a company's shares today and receiving the company's earnings for a user-determined number of future years. The future earnings are estimated from the past earnings history as represented in the SEC's filings.
+This is a Python program that extracts selected corporate financial statement information from the SEC's (US Securities Exchange Commission's) Edgar filings, as well as from other sources. It uses the data to calculate the net present value and internal rate of return for someone purchasing a company's shares today and receiving the company's earnings for a user-determined number of future years. The future earnings are estimated from the past earnings history as represented in the SEC's filings.
 
 **Background:**
 
