@@ -10,11 +10,11 @@ The SEC is the USA Securities and Exchange Commission. Publicly traded companies
 
 In addition, the SEC makes APIs available for anyone wishing to access this data programmatically. The APIs are described at https://www.sec.gov/edgar/sec-api-documentation .
 
-The SEC's APIs are free of charge but accessing the data programmatically can be daunting. For those looking for a simpler route, the information is more easily available through simpler APIs from a number of third party providers. At time of writing, my favourite is Financial Modeling Prep. See their developer documentation at https://site.financialmodelingprep.com/developer/docs/financial-statement-free-api . They provide either paid data access, or free access with limitations such as a maximum of five years of history.
+The SEC's APIs are free of charge but accessing the data programmatically can be daunting (more about this below). For those looking for a simpler route, the information is more easily available through simpler APIs from a number of third party providers. At time of writing, my favourite is Financial Modeling Prep. See their developer documentation at https://site.financialmodelingprep.com/developer/docs/financial-statement-free-api . They provide either paid data access, or free access with limitations such as a maximum of five years of history.
 
-I was interested in more than five years of history, but so infrequently that I didn't want a paid subscription to Financial Modeling Prep. Instead I created this Python program to access more years of history for select items, directly from the SEC, along with selected other items from Financial Modeling Prep where less history was needed.
+I was interested in more than five years of history, but so infrequently that I didn't want a paid subscription at Financial Modeling Prep. Instead I created this Python program to access more years of history for select items, directly from the SEC, along with selected other items from Financial Modeling Prep where less history was needed.
 
-The program is similar in its goals to the previously posted program I called "Acronym-Symphony-in-the-Keys-of-D-C-F" but allows for more than five years of history. If five years history is sufficient I recommend using "Acronym-Symphony-in-the-Keys-of-D-C-F" as it is simpler in design and execution than "Edgar-and-the-Python" because it gets all its data from Financial Modeling Prep. 
+The program is similar in its goals to the previously posted program I called "Acronym-Symphony-in-the-Keys-of-D-C-F" but allows for more than five years of history. If five years history is sufficient I recommend using "Acronym-Symphony-in-the-Keys-of-D-C-F" as it is simpler in design and execution than "Edgar-and-the-Python" because it gets all its data from Financial Modeling Prep.
 
 **The Goals of Edgar-and-the-Python:**
 
@@ -32,7 +32,19 @@ The program prints results both to the terminal console and to an Excel file. Th
 
 Some sections of this program were based on example code provided by Financial Modeling Prep.
 
+**Limitations of the SEC as a Data Source**
+
+Amongst other limitations, I note that
+
+a) The financial reporting taxonomy used by the SEC, i.e. the financial data fields it collects from filers and how it names/defines those data fields changes from year to year. See e.g. https://www.fasb.org/jsp/FASB/Document_C/DocumentPage&cid=1176164142961 as an example of changing taxonomy.
+
+b) The SEC provides latitude to companies as to which financial data fields they choose to file. I assume a company could choose, for instance, to report and file net income as the SEC-provided fields NetIncomeLossAttributableToParentDiluted or as NetIncomeLossAvailableToCommonStockholdersDiluted or as a number of other SEC-provided similar data fields - each with slightly different definitions.
+
+This makes historical data collection from the SEC challenging. For instance, if one attempts to collect a history of net income for the company with ticker WEC, one finds that from 2010 to 2013 the company filed this as an SEC item labelled "NetIncomeLoss". From 2013 onwards, this item disappeared and was replaced by an item called "NetIncomeLossAvailableToCommonStockholder".
+
+To overcome this, I used yet another net income-related measure called "ComprehensiveIncomeNetOfTax". While this does provide a more continuous history in the example of WEC and several other companies, it doesn't work in all cases. Where it fails, the program prints out a warning message.
+
 **Important Disclaimer:**
 
-This program was written as a Python learning exercise and is not intended for stock trading, trading advice or any other purpose. Nor is it guaranteed to be in any way error-free. Comments, corrections and suggestions are welcome.
+This program was written as a Python learning exercise and and exercise in understanding the SEC API. The program is not intended for stock trading, trading advice or any other purpose. Nor is it guaranteed to be in any way error-free. Comments, corrections and suggestions are welcome.
 
