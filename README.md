@@ -16,7 +16,7 @@ I was interested in more than five years of history, but so infrequently that I 
 
 The program is similar in its goals to the previously posted program I called "Acronym-Symphony-in-the-Keys-of-D-C-F" but allows for more than five years of history. If five years history is sufficient I recommend using "Acronym-Symphony-in-the-Keys-of-D-C-F" as it is simpler in design and execution than "Edgar-and-the-Python" because it gets all its data from Financial Modeling Prep. 
 
-**The Goals of Edgar-and-the-Python**
+**The Goals of Edgar-and-the-Python:**
 
 The program takes a user-defined list of ticker symbols for large US stocks & looks up the corresponding share prices, the stock split histories, and the SEC's  central index keys (CIKs) from Financial Modeling Prep (see https://financialmodelingprep.com/developer/docs/). Access to Financial Modeling Prep is available with a free API key which the user must enter into the program code. The CIK is needed in turn to access the SEC data. SEC data is organized by CIK, and not by stock ticker symbols.
 
@@ -32,7 +32,7 @@ The program prints results both to the terminal console and to an Excel file. Th
 
 Some sections of this program were based on example code provided by Financial Modeling Prep.
 
-**Important Disclaimer**
+**Important Disclaimer:**
 
 This program was written as a Python learning exercise and is not intended for stock trading, trading advice or any other purpose. Nor is it guaranteed to be in any way error-free. Comments, corrections and suggestions are welcome.
 
